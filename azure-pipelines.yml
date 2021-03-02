@@ -21,7 +21,12 @@ steps:
     ls -R
   displayName: 'npm install and build'
 
-- task: PublishBuildArtifacts@1
-  inputs: 
-    PathtoPublish: public # dist or build files
-    ArtifactName: 'www' # output artifact named www
+- task: PublishPipelineArtifact@1
+  inputs:
+    targetPath: $(System.DefaultWorkingDirectory)/public
+    artifactName: WebApp
+
+# - task: PublishBuildArtifacts@1
+#   inputs: 
+#     PathtoPublish: public # dist or build files
+#     ArtifactName: 'www' # output artifact named www
