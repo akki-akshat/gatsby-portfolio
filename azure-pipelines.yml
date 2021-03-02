@@ -7,7 +7,7 @@ trigger:
 - master
 
 pool:
-  vmImage: windows-latest
+  vmImage: ubuntu-latest
 
 steps:
 - task: NodeTool@0
@@ -18,10 +18,10 @@ steps:
 - script: |
     npm install
     npm run build
-    ls
+    ls -R
   displayName: 'npm install and build'
 
 - task: PublishBuildArtifacts@1
   inputs: 
-    PathtoPublish: gatsby-portfolio # dist or build files
+    PathtoPublish: . # dist or build files
     ArtifactName: 'www' # output artifact named www
