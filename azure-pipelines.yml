@@ -23,5 +23,5 @@ steps:
 
 - task: PublishBuildArtifacts@1
   inputs: 
-    PathtoPublish: . # dist or build files
+    PathtoPublish: public # dist or build files
     ArtifactName: 'www' # output artifact named www
